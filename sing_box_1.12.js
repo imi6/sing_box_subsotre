@@ -31,7 +31,7 @@ config.outbounds.map(i => {
   if (['sg', 'sg-auto'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /^(?!.*(?:us)).*(新|sg|singapore|🇸🇬)/i))
   }
-  if (['wmdl'].includes(i.tag)) {
+  if (['wmdlauto'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /wmdl|🇺🇸/i))
   }
 })
