@@ -19,7 +19,7 @@ config.outbounds.map(i => {
   if (['all', 'all-auto'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies))
   }
-  if (['hk', 'hk-auto'].includes(i.tag)) {
+  if (['🎁收集'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /wmdl/i))
   }
   if (['tw', 'tw-auto'].includes(i.tag)) {
@@ -30,9 +30,6 @@ config.outbounds.map(i => {
   }
   if (['sg', 'sg-auto'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /^(?!.*(?:us)).*(新|sg|singapore|🇸🇬)/i))
-  }
-  if (['wmdlauto'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, /wmdl|🇺🇸/i))
   }
 })
 
