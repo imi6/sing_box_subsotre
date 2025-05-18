@@ -16,16 +16,24 @@ let proxies = await produceArtifact({
 config.outbounds.push(...proxies)
 
 config.outbounds.map(i => {
-  if (['🚀代理'].includes(i.tag)) {
+  if (['all', 'all-auto'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies))
   }
+  if (['hk', 'hk-auto'].includes(i.tag)) {
+    i.outbounds.push(...getTags(proxies, /港|hk|hongkong|kong kong|🇭🇰/i))
+  }
+  if (['tw', 'tw-auto'].includes(i.tag)) {
+    i.outbounds.push(...getTags(proxies, /台|tw|taiwan|🇹🇼/i))
+  }
+  if (['jp', 'jp-auto'].includes(i.tag)) {
+    i.outbounds.push(...getTags(proxies, /日本|jp|japan|🇯🇵/i))
+  }
+  if (['sg', 'sg-auto'].includes(i.tag)) {
+    i.outbounds.push(...getTags(proxies, /^(?!.*(?:us)).*(新|sg|singapore|🇸🇬)/i))
+  }
   if (['🚀网名大佬'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, /wmdl/i))
+    i.outbounds.push(...getTags(proxies, /wmdl|🇺🇸/i))
   }
-  if (['🎁收集'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, /wmdl|isif|liudage/i))
-  }
-
 })
 
 config.outbounds.forEach(outbound => {
