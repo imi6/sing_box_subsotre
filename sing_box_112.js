@@ -19,7 +19,7 @@ config.outbounds.map(i => {
   if (['all', 'all-auto'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies))
   }
-  if (['🎁收集'].includes(i.tag)) {
+  if (['🎁收集','hk'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /wmdl/i))
   }
   if (['tw', 'tw-auto'].includes(i.tag)) {
