@@ -144,6 +144,11 @@
           ],
           "interrupt_exist_connections": true
       },
+    {
+      "tag": "wmdl",
+      "type": "selector",
+      "outbounds": []
+    },
       {
           "type": "direct",
           "tag": "out-direct"
