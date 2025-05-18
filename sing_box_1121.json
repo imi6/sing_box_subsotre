@@ -106,9 +106,7 @@
       {
           "type": "selector",
           "tag": "🚀网名大佬",
-          "outbounds": [
-            "hk"
-          ],
+          "outbounds": [],
           "interrupt_exist_connections": true
       },
       {
@@ -141,22 +139,9 @@
       {
           "type": "selector",
           "tag": "🎁收集",
-          "outbounds": [
-          ],
+          "outbounds": [],
           "interrupt_exist_connections": true
       },
-      {
-          "type": "selector",
-          "tag": "souji",
-          "outbounds": [
-          ],
-          "interrupt_exist_connections": true
-      },
-    {
-      "tag": "hk",
-      "type": "selector",
-      "outbounds": []
-    },
       {
           "type": "direct",
           "tag": "out-direct"
