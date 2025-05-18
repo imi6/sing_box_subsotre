@@ -1,0 +1,58 @@
+{
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "🚀代理",
+      "outbounds": [
+        "🚀网名大佬",
+        "🎁收集",
+        "out-direct"
+      ],
+      "default": "🚀网名大佬",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "🚀网名大佬",
+      "outbounds": [],
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "📲telegram",
+      "outbounds": [
+        "🚀代理"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "🤖AI",
+      "outbounds": [
+        "🚀代理",
+        "🚀网名大佬"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "🐠漏网之鱼",
+      "outbounds": [
+        "out-direct",
+        "🚀代理"
+      ],
+      "default": "out-direct",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "🎁收集",
+      "outbounds": [],
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "direct",
+      "tag": "out-direct"
+    }
+  ]
+}
