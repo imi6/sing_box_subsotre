@@ -107,7 +107,7 @@
           "type": "selector",
           "tag": "🚀网名大佬",
           "outbounds": [
-            "wmdlauto"
+            "hk"
           ],
           "interrupt_exist_connections": true
       },
@@ -146,7 +146,7 @@
           "interrupt_exist_connections": true
       },
     {
-      "tag": "wmdlauto",
+      "tag": "hk",
       "type": "selector",
       "outbounds": []
     },
