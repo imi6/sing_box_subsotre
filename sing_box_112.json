@@ -145,6 +145,13 @@
           ],
           "interrupt_exist_connections": true
       },
+      {
+          "type": "selector",
+          "tag": "souji",
+          "outbounds": [
+          ],
+          "interrupt_exist_connections": true
+      },
     {
       "tag": "hk",
       "type": "selector",
