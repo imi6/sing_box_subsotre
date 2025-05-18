@@ -92,14 +92,6 @@
       }
   ],
   "outbounds": [
-    {
-      "tag": "hk-proxy",
-      "type": "selector",
-      "outbounds": [
-        "hk"
-      ],
-      "default": "all-auto"
-    },
       {
           "type": "selector",
           "tag": "🚀代理",
