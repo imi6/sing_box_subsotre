@@ -8,19 +8,22 @@
         "🎁收集",
         "out-direct"
       ],
-      "default": "🚀网名大佬"
+      "default": "🚀网名大佬",
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
       "tag": "🚀网名大佬",
-      "outbounds": []
+      "outbounds": [],
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
       "tag": "📲telegram",
       "outbounds": [
         "🚀代理"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
@@ -28,7 +31,8 @@
       "outbounds": [
         "🚀代理",
         "🚀网名大佬"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
@@ -37,12 +41,14 @@
         "out-direct",
         "🚀代理"
       ],
-      "default": "out-direct"
+      "default": "out-direct",
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
       "tag": "🎁收集",
-      "outbounds": []
+      "outbounds": [],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🚀自动测速",
