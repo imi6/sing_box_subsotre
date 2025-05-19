@@ -190,7 +190,7 @@
       {
         "clash_mode": "Global",
         "action": "route",
-        "outbound": "out-direct"
+        "outbound": "🚀代理"
       },
       {
         "ip_is_private": true,
@@ -242,9 +242,6 @@
         ],
         "action": "route",
         "outbound": "out-direct"
-      },
-      {
-        "action": "resolve"
       }
     ],
     "rule_set": [
