@@ -45,6 +45,14 @@
       "outbounds": []
     },
     {
+      "tag": "🚀自动测速",
+      "type": "urltest",
+      "outbounds": [],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m",
+      "tolerance": 50
+    },
+    {
       "type": "direct",
       "tag": "out-direct"
     }
