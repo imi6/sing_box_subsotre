@@ -354,14 +354,7 @@
     ],
     "rules": [
       {
-        "action": "sniff",
-        "sniffer": [
-          "http",
-          "tls",
-          "quic",
-          "dns"
-        ],
-        "timeout": "500ms"
+        "action": "sniff"
       },
       {
         "type": "logical",
@@ -443,6 +436,6 @@
     ],
     "find_process": true,
     "auto_detect_interface": true,
-    "final": "out-direct"
+    "final": "🐠漏网之鱼"
   }
 }
