@@ -86,6 +86,7 @@
       }
     ],
     "independent_cache": true,
+    "strategy": "prefer_ipv4",
     "final": "dns_remote"
   },
   "inbounds": [
@@ -105,19 +106,22 @@
         "🎁收集",
         "out-direct"
       ],
-      "default": "🚀网名大佬"
+      "default": "🚀网名大佬",
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
       "tag": "🚀网名大佬",
-      "outbounds": []
+      "outbounds": [],
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
       "tag": "📲telegram",
       "outbounds": [
         "🚀代理"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
@@ -125,7 +129,8 @@
       "outbounds": [
         "🚀代理",
         "🚀网名大佬"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
@@ -134,12 +139,14 @@
         "out-direct",
         "🚀代理"
       ],
-      "default": "out-direct"
+      "default": "out-direct",
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
       "tag": "🎁收集",
-      "outbounds": []
+      "outbounds": [],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🚀自动测速",
@@ -158,6 +165,88 @@
     "default_domain_resolver": {
       "server": "dns_local"
     },
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "clash_mode": "Direct",
+        "action": "route",
+        "outbound": "out-direct"
+      },
+      {
+        "clash_mode": "Global",
+        "action": "route",
+        "outbound": "out-direct"
+      },
+      {
+        "ip_is_private": true,
+        "action": "route",
+        "outbound": "out-direct"
+      },
+      {
+        "rule_set": [
+          "geosite-telegram",
+          "geoip-telegram"
+        ],
+        "action": "route",
+        "outbound": "📲telegram"
+      },
+      {
+        "rule_set": "geosite-openai",
+        "action": "route",
+        "outbound": "🤖AI"
+      },
+      {
+        "rule_set": [
+          "geoip-facebook",
+          "geosite-facebook",
+          "geoip-google",
+          "geosite-google",
+          "geosite-youtube",
+          "geosite-twitter",
+          "geoip-twitter",
+          "geosite-netflix",
+          "geoip-netflix",
+          "geosite-microsoft",
+          "geosite-tumblr",
+          "geosite-geolocation-!cn",
+          "geosite-proxy"
+        ],
+        "action": "route",
+        "outbound": "🚀代理"
+      },
+      {
+        "rule_set": [
+          "geosite-private",
+          "geoip-private",
+          "geoip-cn",
+          "geosite-cn",
+          "cn-site",
+          "cn-ipv4",
+          "cn-ipv6",
+          "geosite-pt"
+        ],
+        "action": "route",
+        "outbound": "out-direct"
+      },
+      {
+        "action": "resolve"
+      }
+    ],
     "rule_set": [
       {
         "type": "remote",
@@ -350,88 +439,6 @@
         "update_interval": "24h",
         "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/maxmind-cn-ipv6.srs",
         "download_detour": "🎁收集"
-      }
-    ],
-    "rules": [
-      {
-        "action": "sniff"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "port": 53
-          },
-          {
-            "protocol": "dns"
-          }
-        ],
-        "action": "hijack-dns"
-      },
-      {
-        "clash_mode": "Direct",
-        "action": "route",
-        "outbound": "out-direct"
-      },
-      {
-        "clash_mode": "Global",
-        "action": "route",
-        "outbound": "out-direct"
-      },
-      {
-        "ip_is_private": true,
-        "action": "route",
-        "outbound": "out-direct"
-      },
-      {
-        "rule_set": [
-          "geosite-telegram",
-          "geoip-telegram"
-        ],
-        "action": "route",
-        "outbound": "📲telegram"
-      },
-      {
-        "rule_set": "geosite-openai",
-        "action": "route",
-        "outbound": "🤖AI"
-      },
-      {
-        "rule_set": [
-          "geoip-facebook",
-          "geosite-facebook",
-          "geoip-google",
-          "geosite-google",
-          "geosite-youtube",
-          "geosite-twitter",
-          "geoip-twitter",
-          "geosite-netflix",
-          "geoip-netflix",
-          "geosite-microsoft",
-          "geosite-tumblr",
-          "geosite-geolocation-!cn",
-          "geosite-proxy"
-        ],
-        "action": "route",
-        "outbound": "🚀代理"
-      },
-      {
-        "rule_set": [
-          "geosite-private",
-          "geoip-private",
-          "geoip-cn",
-          "geosite-cn",
-          "cn-site",
-          "cn-ipv4",
-          "cn-ipv6",
-          "geosite-pt"
-        ],
-        "action": "route",
-        "outbound": "out-direct"
-      },
-      {
-        "action": "resolve"
       }
     ],
     "find_process": true,
