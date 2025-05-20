@@ -64,6 +64,15 @@
       },
       {
         "rule_set": [
+          "geosite-private",
+          "geosite-cn",
+          "cn-site",
+          "geosite-pt"
+        ],
+        "server": "dns_local"
+      },
+      {
+        "rule_set": [
           "geosite-facebook",
           "geosite-google",
           "geosite-telegram",
@@ -78,15 +87,6 @@
         ],
         "action": "route",
         "server": "dns_fakeip"
-      },
-      {
-        "rule_set": [
-          "geosite-private",
-          "geosite-cn",
-          "cn-site",
-          "geosite-pt"
-        ],
-        "server": "dns_local"
       }
     ],
     "independent_cache": true,
@@ -211,6 +211,20 @@
       },
       {
         "rule_set": [
+          "geosite-private",
+          "geoip-private",
+          "geoip-cn",
+          "geosite-cn",
+          "cn-site",
+          "cn-ipv4",
+          "cn-ipv6",
+          "geosite-pt"
+        ],
+        "action": "route",
+        "outbound": "out-direct"
+      },
+      {
+        "rule_set": [
           "geoip-facebook",
           "geosite-facebook",
           "geoip-google",
@@ -227,20 +241,6 @@
         ],
         "action": "route",
         "outbound": "🚀代理"
-      },
-      {
-        "rule_set": [
-          "geosite-private",
-          "geoip-private",
-          "geoip-cn",
-          "geosite-cn",
-          "cn-site",
-          "cn-ipv4",
-          "cn-ipv6",
-          "geosite-pt"
-        ],
-        "action": "route",
-        "outbound": "out-direct"
       }
     ],
     "rule_set": [
