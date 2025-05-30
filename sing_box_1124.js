@@ -22,6 +22,9 @@ config.outbounds.map(i => {
   if (['🎁收集'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /wmdl|liudage|isif/i))
   }
+  if (['🪁特殊使用'].includes(i.tag)) {
+    i.outbounds.push(...getTags(proxies, /美|新|韩/i))
+  }
   if (['🚀网名大佬'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /wmdl/i))
   }
