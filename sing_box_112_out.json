@@ -19,6 +19,12 @@
     },
     {
       "type": "selector",
+      "tag": "🪁特殊使用",
+      "outbounds": [],
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
       "tag": "📲telegram",
       "outbounds": [
         "🚀代理"
