@@ -20,7 +20,7 @@ config.outbounds.map(i => {
     i.outbounds.push(...getTags(proxies))
   }
   if (['🎁收集'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, /wmdl|liudage|isif/i))
+    i.outbounds.push(...getTags(proxies, /wmdl|liudage|isif|zxqukhjt/i))
   }
   if (['🪁特殊使用'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /美|新|韩/i))
