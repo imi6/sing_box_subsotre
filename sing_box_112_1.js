@@ -26,7 +26,7 @@ config.outbounds.map(i => {
     i.outbounds.push(...getTags(proxies, /美|新|韩/i))
   }
   if (['🚀网名大佬'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, /wmdl|zxqukhjt/i))
+    i.outbounds.push(...getTags(proxies, /wmdl|zxqukhjt|liudage/i))
   }
 })
 
