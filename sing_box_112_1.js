@@ -16,7 +16,7 @@ let proxies = await produceArtifact({
 config.outbounds.push(...proxies)
 
 config.outbounds.map(i => {
-  if (['🚀代理','🚀自动测速'].includes(i.tag)) {
+  if (['🚀代理'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies))
   }
   if (['🎁收集'].includes(i.tag)) {
